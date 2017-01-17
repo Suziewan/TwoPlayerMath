@@ -12,6 +12,7 @@
 @interface GameModel : NSObject
 
 @property (nonatomic) NSString* question;
+@property (nonatomic) NSInteger answer;
 @property (nonatomic) NSInteger rightValue;
 @property (nonatomic) NSInteger leftValue;
 @property (nonatomic) Player *playerOne;
@@ -25,11 +26,10 @@
 
 -(NSString *)getUserInput;
 -(void) generateQuestion;
--(void) generateAnswer;
--(NSInteger) checkAnswer;
+-(BOOL) isAnswerCorrect;
 -(NSInteger) keepScore;
 -(void) changeTurn;
--(NSString*) gameOver;
+-(BOOL) gameOver;
 
 
 @end

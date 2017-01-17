@@ -7,6 +7,7 @@
 //
 
 #import "GameModel.h"
+#import "Player.h"
 
 @implementation GameModel
 
@@ -16,6 +17,8 @@
     if (self) {
         _rightValue = arc4random_uniform(10);
         _leftValue = arc4random_uniform(10);
+        _answer = self.rightValue+self.leftValue;
+        
     }
     return self;
 }
@@ -24,6 +27,26 @@
 }
 
 
+-(BOOL) isAnswerCorrect{
+    
+   
+    if (self.answer == self.playerAnswer) {
+        return YES;
+    }else{
+        NSLog(@"Incorrect answer");
+    }
+    }
+    //COMPARE SELF.ANSWER TO RESULT OF USER INPUT (GET USER INPUT THEN CHANGE TO INTEGER)
+    }
+
+-(BOOL) gameOver{
+    NSString *player = _lives;
+    
+    
+    if ([Player.lives < 1]) {
+        return YES;
+    }
+}
 
 
 
